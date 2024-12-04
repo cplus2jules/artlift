@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtLift</title>
+    <link rel="icon" type="image/png" href="/static/artlift.png">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="/static/artify plain.png" alt="Artlift Logo" class="logo">
+                <h1>ArtLift</h1>
+            </div>
+            <p>Get high-resolution cover art from any Spotify playlist or album</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input type="text" id="spotify-url" placeholder="Paste Spotify playlist or album URL here">
+                <button id="submit-btn">Get Artwork</button>
+            </div>
+            <div class="tooltip-section">
+                <p class="tooltip">Only user created public spotify playlists and artist albums are supported. Please ensure the playlist is set to public.</p>
+            </div>
+
+            <div id="result-section" class="hidden">
+                <div class="artwork-container">
+                    <img id="artwork" src="" alt="Album/Playlist Artwork">
+                    <h2 id="title"></h2>
+                    <div class="resolution-info">
+                        <p>Resolution: <span id="image-resolution">-</span></p>
+                        <p id="resolution-warning" class="warning hidden">⚠️ This image might be low resolution.</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a id="download-btn" class="btn" download>Download Artwork</a>
+                    <button id="new-search-btn" class="btn">New Search</button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Fetching artwork...</p>
+            </div>
+
+            <div id="error" class="hidden">
+                <p>Error message here</p>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>Created with <span class="heart">♥</span> by <a href="https://instagram.com/neo.jules" target="_blank">@neo.jules</a></p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
