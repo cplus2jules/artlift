@@ -4,7 +4,7 @@
   publish = "."
 
 [build.environment]
-  PYTHON_VERSION = "3.9"
+  PYTHON_VERSION = "3.9.16"
 
 [[redirects]]
   from = "/*"
@@ -12,4 +12,4 @@
   status = 200
 
 [context.production]
-  environment = { PYTHON_VERSION = "3.9" }
+  environment = { PYTHON_VERSION = "3.9.16" }
