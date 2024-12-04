@@ -13,3 +13,8 @@
 
 [context.production]
   environment = { PYTHON_VERSION = "3.9.16" }
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
