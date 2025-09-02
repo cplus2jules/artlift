@@ -16,10 +16,8 @@ client_credentials_manager = SpotifyClientCredentials(
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager, requests_timeout=15)
 
 def extract_spotify_id(url):
-    # Extract the ID from various Spotify URL formats
     try:
         if 'playlist' in url:
-            # Handle both full URLs and Spotify URIs
             if '/playlist/' in url:
                 return url.split('/playlist/')[1].split('?')[0].split('/')[0]
             elif ':playlist:' in url:
@@ -54,8 +52,6 @@ def get_cover():
                 result = sp.playlist(spotify_id)
             else:
                 result = sp.album(spotify_id)
-
-            # Get the largest available image
             images = result.get('images', [])
             if not images:
                 return jsonify({'error': 'No artwork found'}), 404
