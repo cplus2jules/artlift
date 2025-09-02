@@ -11,21 +11,16 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Load environment variables
 load_dotenv()
 
-# Get base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR = BASE_DIR / "static"
 
-# Create FastAPI app
 app = FastAPI()
 
-# Configure CORS
 origins = [
     "https://artlift.vercel.app",
     "http://artlift.vercel.app",
@@ -43,10 +38,7 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
-# Mount static files
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
-
-# Configure templates
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 @app.options("/{full_path:path}")
@@ -70,8 +62,6 @@ async def static_files(file_path: str):
     if not file_location.exists():
         raise HTTPException(status_code=404, detail="File not found")
     return FileResponse(str(file_location))
-
-# Initialize Spotify client as None first
 sp = None
 
 class SpotifyURL(BaseModel):
@@ -99,8 +89,6 @@ def init_spotify():
     except Exception as e:
         logger.error(f"Spotify Client Configuration Error: {str(e)}")
         return None
-
-# Initialize Spotify client
 sp = init_spotify()
 
 @app.post("/get_cover")
