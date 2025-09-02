@@ -1,4 +1,4 @@
-# Artlift _Spotify Cover Art Extractor_
+# Artlift _"Spotify Cover Art Extractor"_
 
 A responsive web application that allows users to extract high-resolution artwork from Spotify playlists and albums.
 
