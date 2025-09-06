@@ -8,7 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Configure Spotify client
+# Configure the Spotify API
 client_credentials_manager = SpotifyClientCredentials(
     client_id=os.getenv('SPOTIPY_CLIENT_ID'),
     client_secret=os.getenv('SPOTIPY_CLIENT_SECRET')
