@@ -1,6 +1,6 @@
 # Artlift _"Spotify Cover Art Extractor"_
 
-A responsive web application that allows users to extract high-resolution artwork from Spotify playlists and albums.
+A web application that allows you to extract high-resolution artwork from Spotify playlists and albums.
 
 ## Features
 
@@ -10,7 +10,7 @@ A responsive web application that allows users to extract high-resolution artwor
 - Direct download functionality
 - Responsive design for mobile and desktop
 
-## Setup
+## Cloning and Setting Up
 
 1. Clone this repository
 2. Install the required dependencies:
